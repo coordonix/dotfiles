@@ -54,7 +54,7 @@ deploy_files() {
 
     echo "Processing $file_type configuration files..."
 
-    for file in "$src_dir"/.*; do
+    for file in 'ls -A $src_dir'; do
         local filename=$(basename "$file")
         local target="$HOME/$filename"
 
