@@ -8,9 +8,9 @@ Usage: $0 [option]
 Options:
   help            Display this help menu
   vim             Install Vim configuration files
-  bash            Install Bash configuration files
-  resources       Install resource files
-  all             Install all configuration and resource files
+  bash		  Install Bash configuration files
+  resources	  Install Resource files
+  all		  Install all configurations and resource files
 EOF
     exit 0
 }
@@ -59,16 +59,16 @@ deploy_files() {
         local target="$HOME/$filename"
 
         if [ -f "$target" ]; then
-            local timestamp=$(date +"%Y%m%d.%H%M%S")
-            local backup_file="$backup_dir/${filename}.$timestamp.bak"
-            echo "Backing up existing file: $target -> $backup_file"
-            mv "$target" "$backup_file"
+                local timestamp=$(date +"%Y%m%d.%H%M%S")
+                local backup_file="$backup_dir/${filename}.$timestamp.bak"
+                echo "Backing up existing file: $target -> $backup_file"
+                mv "$target" "$backup_file"
         else
-            echo "File does not exist in home directory: $filename"
+                echo "File does not exist in Home Directory: $filename"
         fi
 
-        echo "Creating symbolic link: $target -> $file"
-        ln -sf "$file" "$target"
+        echo "Creating symbolic link: $target -> $filename"
+        ln -sf "$src_dir/$filename" "$target"
     done
 }
 
