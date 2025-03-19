@@ -3,6 +3,12 @@
         :let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'c', 'python', 'go', 'cpp']
 " }}}
 
+" TASK LIST SETTINGS {{{
+"-------------------------------------------------------------------------------------------------------
+	:nnoremap <leader>done :s/^\(\s*\)-/\1✓/<cr>
+	:nnoremap <leader>remove :s/^\(\s*\)-/\1✗/<cr>
+" }}}
+
 " AUTOCMD GROUPS {{{
 "_______________________________________________________________________________________________________
         :augroup Markdown " {{{
